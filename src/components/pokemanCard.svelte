@@ -12,4 +12,3 @@
   <img class="h-40 w-40 " src={pokeman.image} alt={pokeman.name} />
   <h2 class="uppercase text-2xl">{pokeman.id}. {pokeman.name}</h2>
 </a>
-
