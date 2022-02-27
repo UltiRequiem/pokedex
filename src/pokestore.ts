@@ -1,30 +1,54 @@
 import { writable } from "svelte/store";
+import setIntervalX from "@ultirequiem/six";
 
 export const pokemon = writable([]);
-const pokemonDetails = {};
 
-let loaded = false;
+const pokemonObtained = [];
+
+let loadedTimes = 0;
+
+function orderNumber(text: string) {
+  // eslint-disable-next-line unicorn/prefer-string-slice
+  return text.substring(text.lastIndexOf("s/") + 2, text.lastIndexOf("/"));
+}
 
 export const fetchPokemon = async () => {
-  if (loaded) return;
+  if (loadedTimes >= 8) {
+    alert("You have reached the maximum number of pokemon");
+    return;
+  }
 
-  const url = `https://pokeapi.co/api/v2/pokemon?limit=898`;
+  const url = `https://pokeapi.co/api/v2/generation/${loadedTimes + 1}`;
 
   const response = await fetch(url);
   const data = await response.json();
 
-  const loadedPokemon = data.results.map((data, index) => ({
+  const pokemonList = data.pokemon_species;
+
+  for (const pokemon_ of pokemonList) {
+    pokemon_.nr = orderNumber(pokemon_.url);
+  }
+
+  pokemonList.sort((a, b) => a.nr - b.nr);
+
+  const loadedPokemon = data.pokemon_species.map((data, index: number) => ({
     name: data.name,
-    id: index + 1,
+    id: pokemonObtained.length + index + 1,
     image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-      index + 1
+      pokemonObtained.length + index + 1
     }.png`,
   }));
 
-  pokemon.set(loadedPokemon);
+  pokemonObtained.push(...loadedPokemon);
 
-  loaded = true;
+  pokemon.set(pokemonObtained);
+
+  loadedTimes++;
 };
+
+setIntervalX(fetchPokemon, 3000, 7);
+
+const pokemonDetails = {};
 
 export const getPokemonById = async (id: number | string) => {
   if (pokemonDetails[id]) return pokemonDetails[id];
