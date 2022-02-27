@@ -1,6 +1,6 @@
-# SvelteKit + Tailwind CSS Pokedex
+# UltiRequiem's Pokedex
 
-An example [SvelteKit](https://kit.svelte.dev) App.
+> SvelteKit + Tailwind CSS + TypeScript
 
 ## License
 

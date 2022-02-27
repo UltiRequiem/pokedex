@@ -7,7 +7,7 @@
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --write --plugin-search-dir=. ."
+    "fmt": "prettier --write --plugin-search-dir=. ."
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "1.0.0-next.29",
