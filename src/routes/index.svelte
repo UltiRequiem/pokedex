@@ -1,9 +1,9 @@
 <script lang="ts">
-  import PokemanCard from "../components/pokemanCard.svelte";
+  import PokemonCard from "../components/pokecard.svelte";
   import { pokemon, fetchPokemon } from "../pokestore";
 
-  let searchTerm = "";
-  let filteredPokemon = [];
+  let searchTerm = "",
+    filteredPokemon = [];
 
   $: {
     filteredPokemon = searchTerm
@@ -27,7 +27,7 @@
   placeholder="Search Pokemon"
 />
 <div class="py-4 grid gap-4 md:grid-cols-2 grid-cols-1">
-  {#each filteredPokemon as pokeman}
-    <PokemanCard {pokeman} />
+  {#each filteredPokemon as pokemon}
+    <PokemonCard {pokemon} />
   {/each}
 </div>
