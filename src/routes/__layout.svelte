@@ -3,7 +3,7 @@
   import Footer from "../components/footer.svelte";
 </script>
 
-<div class="p-8 max-w-6xl mx-auto">
+<div class="mx-auto max-w-6xl p-8">
   <Nav />
   <slot />
   <Footer />
