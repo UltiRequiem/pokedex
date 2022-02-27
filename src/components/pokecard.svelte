@@ -9,6 +9,6 @@
   href={`/pokemon/${pokemon.id}`}
   transition:fade
 >
-  <img class="h-40 w-40 " src={pokemon.image} alt={pokemon.name} />
+  <im class="h-64 w-64" src={pokemon.image} alt={pokemon.name} />
   <h2 class="uppercase text-2xl">{pokemon.id}. {pokemon.name}</h2>
 </a>

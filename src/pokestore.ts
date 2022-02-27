@@ -14,7 +14,6 @@ function orderNumber(text: string) {
 
 export const fetchPokemon = async () => {
   if (loadedTimes >= 8) {
-    alert("You have reached the maximum number of pokemon");
     return;
   }
 
