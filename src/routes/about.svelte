@@ -5,7 +5,7 @@
     Hey, everyone!
     <br />
     <br />
-    I'm Eliaz Bobadilla, 15 years old, System and Web Developer from Peru 🇵🇪
+    I'm Eliaz Bobadilla, 15 years old, System and Web Developer from Peru
   </p>
 
   <p class="mt-5 text-yellow-400">

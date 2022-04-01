@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import setIntervalX from "@ultirequiem/six";
+import { setIntervalX } from "@ultirequiem/six";
 
 export const pokemon = writable([]);
 
@@ -30,13 +30,15 @@ export const fetchPokemon = async () => {
 
   pokemonList.sort((a, b) => a.nr - b.nr);
 
-  const loadedPokemon = data.pokemon_species.map((data, index: number) => ({
-    name: data.name,
-    id: pokemonObtained.length + index + 1,
-    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-      pokemonObtained.length + index + 1
-    }.png`,
-  }));
+  const loadedPokemon = data.pokemon_species.map(
+    (data: { name: string }, index: number) => ({
+      name: data.name,
+      id: pokemonObtained.length + index + 1,
+      image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+        pokemonObtained.length + index + 1
+      }.png`,
+    })
+  );
 
   pokemonObtained.push(...loadedPokemon);
 

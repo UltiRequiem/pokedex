@@ -29,6 +29,6 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@ultirequiem/six": "^0.0.0"
+    "@ultirequiem/six": "^1.0.0"
   }
 }
