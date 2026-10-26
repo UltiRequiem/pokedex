@@ -30,5 +30,6 @@
   },
   "dependencies": {
     "@ultirequiem/six": "^1.0.0"
-  }
+  },
+  "packageManager": "pnpm@12.6.0"
 }
