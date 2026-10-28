@@ -1,17 +1,7 @@
-<script context="module" lang="ts">
-  import { getPokemonById } from "../../pokestore";
-
-  import type { Load } from "@sveltejs/kit";
-
-  export const load: Load = async ({ params }) => {
-    const pokemon = await getPokemonById(params.id);
-    return { props: { pokemon } };
-  };
-</script>
-
-<script>
-  export let pokemon;
-  const pokemonType = pokemon.types[0].type.name;
+<script lang="ts">
+  let { data } = $props();
+  const pokemon = $derived(data.pokemon);
+  const pokemonType = $derived(pokemon.types[0].type.name);
 </script>
 
 <svelte:head>
