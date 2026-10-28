@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -43,16 +43,11 @@
     <link rel="manifest" href="/manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-    <meta
-      name="theme-color"
-      content="#ffffff"
-      <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    %svelte.head%
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    %sveltekit.head%
   </head>
   <body class="bg-gray-600">
-    <div id="svelte">%svelte.body%</div>
+    <div style="display: contents">%sveltekit.body%</div>
   </body>
 </html>

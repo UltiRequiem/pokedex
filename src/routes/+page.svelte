@@ -1,19 +1,22 @@
 <script lang="ts">
-  import PokemonCard from "../components/pokecard.svelte";
-  import { pokemon, fetchPokemon } from "../pokestore";
+  import { onMount } from "svelte";
+  import PokemonCard from "#lib/components/pokecard.svelte";
+  import { pokemon, fetchPokemon, startPolling } from "#lib/pokestore.js";
 
-  let searchTerm = "",
-    filteredPokemon = [];
+  let searchTerm = $state("");
 
-  $: {
-    filteredPokemon = searchTerm
+  const filteredPokemon = $derived(
+    searchTerm
       ? $pokemon.filter((p) =>
-          p.name.toLowerCase().includes(searchTerm.toLowerCase())
+          p.name.toLowerCase().includes(searchTerm.toLowerCase()),
         )
-      : [...$pokemon];
-  }
+      : [...$pokemon],
+  );
 
-  fetchPokemon();
+  onMount(() => {
+    fetchPokemon();
+    return startPolling();
+  });
 </script>
 
 <svelte:head>
@@ -33,15 +36,15 @@
     placeholder="Search Pokemon"
   />
   <div class="grid grid-cols-1 gap-4 py-4 lg:grid-cols-2">
-    {#each filteredPokemon as pokemon}
+    {#each filteredPokemon as pokemon (pokemon.id)}
       <PokemonCard {pokemon} />
     {/each}
   </div>
 
   {#if !searchTerm}
     <button
-      on:click={fetchPokemon}
-      class="mt-2 mb-4 rounded bg-blue-500 py-2 px-4 text-lg font-bold text-white hover:bg-blue-700"
+      onclick={fetchPokemon}
+      class="mb-4 mt-2 rounded bg-blue-500 px-4 py-2 text-lg font-bold text-white hover:bg-blue-700"
     >
       Load More Pokemon
     </button>

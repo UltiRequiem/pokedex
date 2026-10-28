@@ -1,6 +1,6 @@
 # UltiRequiem's Pokedex
 
-> [SvelteKit](https://kit.svelte.dev) +
+> [SvelteKit](https://svelte.dev/docs/kit) +
 > [Tailwind CSS](https://tailwindcss.com) +
 > [TypeScript](https://typescriptlang.org) + [PokeAPI](https://pokeapi.co)
 
@@ -21,9 +21,17 @@ Or if you like the Netlify domain...
 
 https://ultidex.netlify.app
 
+## Development
+
+```sh
+pnpm install
+pnpm dev      # http://localhost:5173
+pnpm lint && pnpm check && pnpm build
+```
+
 ## Built With
 
-- [SvelteKit](https://kit.svelte.dev)
+- [SvelteKit](https://svelte.dev/docs/kit) (Svelte 5, Vite)
 
 - [Tailwind CSS](https://tailwindcss.com)
 
