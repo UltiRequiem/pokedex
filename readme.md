@@ -13,11 +13,7 @@ This app was mainly made to learn SvelteKit and contribute to
 
 You can visit the site on 👇
 
-https://ultidex.vercel.app/
-
-https://pokedex.ultirequiem.com
-
-Or if you like the Netlify domain...
+https://ultidex.vercel.app
 
 https://ultidex.netlify.app
 
