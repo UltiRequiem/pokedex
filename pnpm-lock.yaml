@@ -167,8 +167,8 @@ importers:
   .:
     dependencies:
       '@ultirequiem/six':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^2.0.2
+        version: 2.0.2
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -552,8 +552,16 @@ packages:
     resolution: {integrity: sha512-SB8xqipSzZHUePCCLNeYxqnxq83X61/qzNhjQGbTfjxGZIeOEP7tBgWYX05Tcd6CgE02WdTJnh5b8kMZJ/+bnQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@ultirequiem/random-number@3.0.1':
+    resolution: {integrity: sha512-sIoFLjeHJpyOn5RUCADEvON4sdCrTKXl8DAHo3FWgHbZfQr8Oc7OCqLvgICK1uFw3VZqNoNYzYlVfG4PbrJKMw==}
+    engines: {node: '>=20'}
+
   '@ultirequiem/six@1.0.0':
     resolution: {integrity: sha512-plcRcreIwqvL6W9LcEjqBYLjEr6KQrTekTFm3AwEg5ESOuEEx1xMuhVakFAHOJkrL9+++/KXAiMQznH/u4ezVw==}
+
+  '@ultirequiem/six@2.0.2':
+    resolution: {integrity: sha512-csfLPGdo7d0ttz3roZpQlghKZu0VFcr9MQUxXKr6ZHM4N1iqB4RN6E5oQpAnB6zEHuSnZ78RBfDL1T7aBA44yQ==}
+    engines: {node: '>=20'}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1796,7 +1804,14 @@ snapshots:
       '@typescript-eslint/types': 8.72.1
       eslint-visitor-keys: 5.0.1
 
+  '@ultirequiem/random-number@3.0.1': {}
+
   '@ultirequiem/six@1.0.0': {}
+
+  '@ultirequiem/six@2.0.2':
+    dependencies:
+      '@ultirequiem/random-number': 3.0.1
+      '@ultirequiem/six': 1.0.0
 
   acorn-jsx@5.3.2(acorn@8.19.0):
     dependencies:
