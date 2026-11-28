@@ -167,8 +167,8 @@ importers:
   .:
     dependencies:
       '@ultirequiem/six':
-        specifier: ^2.0.5
-        version: 2.0.5
+        specifier: ^2.0.6
+        version: 2.0.6
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -590,8 +590,8 @@ packages:
   '@ultirequiem/six@1.0.0':
     resolution: {integrity: sha512-plcRcreIwqvL6W9LcEjqBYLjEr6KQrTekTFm3AwEg5ESOuEEx1xMuhVakFAHOJkrL9+++/KXAiMQznH/u4ezVw==}
 
-  '@ultirequiem/six@2.0.5':
-    resolution: {integrity: sha512-QfLvrHuVPxVrLxAUvqegeYR1FCJhTcDmckjWXkUGYckuoUeV4obKKQH9Jxy+Go7LtfbJkd1MxgzYyXrY6SieBg==}
+  '@ultirequiem/six@2.0.6':
+    resolution: {integrity: sha512-vqpetITWYJULu6M7ZO/OG4HPKC62yANqTJMpcdfqd+l8DiJVWMRIPZgVbQUXSVhOYK7gS1CVcOza/XBakxwv9w==}
     engines: {node: '>=20'}
 
   acorn-jsx@5.3.2:
@@ -1883,7 +1883,7 @@ snapshots:
 
   '@ultirequiem/six@1.0.0': {}
 
-  '@ultirequiem/six@2.0.5':
+  '@ultirequiem/six@2.0.6':
     dependencies:
       '@ultirequiem/random-number': 3.0.1
       '@ultirequiem/six': 1.0.0
